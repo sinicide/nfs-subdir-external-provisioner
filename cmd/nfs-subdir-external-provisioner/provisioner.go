@@ -87,7 +87,7 @@ func (p *nfsProvisioner) Provision(ctx context.Context, options controller.Provi
 	pvcNamespace := options.PVC.Namespace
 	pvcName := options.PVC.Name
 
-	pvName := strings.Join([]string{pvcNamespace, pvcName, options.PVName}, "-")
+	pvName := strings.Join([]string{pvcNamespace, pvcName, options.PVName}, "/")
 
 	metadata := &pvcMetadata{
 		data: map[string]string{
